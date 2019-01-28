@@ -1,0 +1,20 @@
+{
+    "name": "myapplication-a-1",
+    "version": "1.0.0",
+    "description": "test heroku deployment",
+    "engines": {
+      "node": "10.14.1",
+      "npm": "6.4.1"
+    },
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "ejs": "^2.5.7",
+      "express": "^4.15.3"
+    }
+    }
