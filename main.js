@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const apiai = require('apiai');
-const app = apiai("14d63ca0296e4ce6ae203d209af6bb94");
+const app = apiai(process.env.dialogflow_token);
 
 client.on('ready', () => {
     console.log(client.user.tag,new Date());
@@ -32,4 +32,4 @@ client.on('message', message => {
     }
 });
 
-client.login('MzczNTg4NTU3ODAzMjkwNjQz.DzEC9g.sKudWrCUYCrwHIM3y3GdhDyIuIE');
+client.login(process.env.discord_token);
