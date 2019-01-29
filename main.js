@@ -8,7 +8,7 @@ const Discord_Client = new Discord.Client();
 const Apiai = require('apiai');
 const Apiai_Client = Apiai(process.env.dialogflow_token);
 const sessionuuid = require('uuid/v1');
-sessionuuid(); //Generate a uuid to be used as api.ai sessionId
+sessionuuid(); //Generate a time based uuid to be used as api.ai sessionId
 
 //#endregion
 

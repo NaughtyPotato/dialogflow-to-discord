@@ -6,7 +6,7 @@ Although Dialogflow has a one-click-to-deploy option on few platforms, Discord i
 # Installing
 * Run the following command to clone the repo onto your local machine, including all the dependencies
 ```
-git clone https://github.com/NaughtyPotato/dialogflow-to-discord
+git clone https://github.com/NaughtyPotato/dialogflow-to-discord.git
 ```
 
 ## Dependencies
@@ -42,7 +42,7 @@ To have a better understanding on API's used for this project i recommend readin
 ![alt text](https://i.imgur.com/X9DLswn.png)
 
 ## Edit 
-`main.js` grants full access to the bot and it's functinalities, you can use is as is, or edit it to fit your needs.
+`main.js` grants full access to the bot and it's functionalities, you can use is as is, or edit it to fit your needs.
 ```Javascript
 // -- Dialogflow meta data -- 
 const Apiai = require('apiai');                                         //Reference to the Dialogfow package
@@ -63,6 +63,11 @@ const Discord_Client = new Discord.Client();
 Discord_Client.login('<Discord Bot Token>');                            //Your bot token to call for your Discord bot
 ```
 ## Deployment
+Run the folowing command and update `package.json`
+```
+nmp init
+```
+
 To run the bot, execute the folowing command
 ```
 node main.js
