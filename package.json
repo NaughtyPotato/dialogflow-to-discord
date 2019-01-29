@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/NaughtyPotato/dialogflow-to-discord/issues"
   },
-  "homepage": "https://github.com/NaughtyPotato/dialogflow-to-discord#readme"
+  "homepage": "https://github.com/NaughtyPotato/dialogflow-to-discord#readme",
+  "keywords": [
+    "api.ai",
+    "discord.js",
+    "dialogflow"
+  ]
 }
