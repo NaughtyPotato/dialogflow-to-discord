@@ -4,8 +4,9 @@
   "description": "a discord bot",
   "main": "main.js",
   "dependencies": {
+    "apiai": "^4.0.3",
     "discord.js": "^11.4.2",
-    "apiai": "^4.0.3"
+    "uuid": "^3.3.2"
   },
   "devDependencies": {},
   "scripts": {

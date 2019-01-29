@@ -1,20 +1,35 @@
+//#region -- meta data --
+
+//Discord.js meta data
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord_Client = new Discord.Client();
 
-const apiai = require('apiai');
-const app = apiai(process.env.dialogflow_token);
+//Apai.ai meta data
+const Apiai = require('apiai');
+const Apiai_Client = Apiai(process.env.dialogflow_token);
+const sessionuuid = require('uuid/v1');
+sessionuuid();
 
-client.on('ready', () => {
-    console.log(client.user.tag,new Date());
-    client.user.setActivity("With my girthy mic!");
+//#endregion
+
+Discord_Client.on('ready', () => {
+    console.log(Discord_Client.user.tag,new Date()); //Console Log -BotName #0000- -Time of Log in-
+
+    Discord_Client.user.setPresence({
+        game: { 
+            name: "With Lizzie ;)",
+            type: 'PLAYING'
+        },
+        status: 'online'
+    })
 });
 
-client.on('message', message => {
+Discord_Client.on('message', message => {
     
-    if(message.content != null && message.author.bot == false){
+    if(message.content != null && message.author.bot == false && Discord_Client.channels.get("539476744038645774")){
 
-        var request = app.textRequest(message.content, {
-            sessionId: '1'
+        var request = Apiai_Client.textRequest(message.content, {
+            sessionId: sessionuuid()
         });
 
         request.on('response', response => {
@@ -33,4 +48,4 @@ client.on('message', message => {
     }
 });
 
-client.login(process.env.discord_token);
+Discord_Client.login(process.env.discord_token);
