@@ -6,6 +6,7 @@ const app = apiai(process.env.dialogflow_token);
 
 client.on('ready', () => {
     console.log(client.user.tag,new Date());
+    client.user.setActivity("With my larege mic!");
 });
 
 client.on('message', message => {
