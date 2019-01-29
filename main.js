@@ -8,7 +8,7 @@ const Discord_Client = new Discord.Client();
 const Apiai = require('apiai');
 const Apiai_Client = Apiai(process.env.dialogflow_token);
 const sessionuuid = require('uuid/v1');
-sessionuuid();
+sessionuuid(); //Generate a uuid to be used as api.ai sessionId
 
 //#endregion
 
@@ -26,16 +26,17 @@ Discord_Client.on('ready', () => {
 
 Discord_Client.on('message', message => {
     
-    if(message.content != null && message.author.bot == false && Discord_Client.channels.get("539476744038645774")){
+    if(message.content != null && message.author.bot == false){
 
         var request = Apiai_Client.textRequest(message.content, {
             sessionId: sessionuuid()
         });
 
         request.on('response', response => {
-            console.log(response);
-            var respond = response.result.fulfillment.speech;
-            var stringRespond = JSON.stringify(respond);
+            console.log(response); //Console Log response data in JSON format
+
+            //var respond = response.result.fulfillment.speech;
+            var stringRespond = JSON.stringify(response.result.fulfillment.speech);
             stringRespond = stringRespond.substring(1,stringRespond.length -1);
             message.channel.send(stringRespond);
         });
